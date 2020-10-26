@@ -1,10 +1,10 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
 
 class Usuarios extends CI_Model{
 
 	public function __construct(){
 		parent::__construct();
+		$this->load->database();
 		$this->db->reconnect();
 	}
 
@@ -54,7 +54,7 @@ class Usuarios extends CI_Model{
 	 * @return bool
 	 */
 	public function add($usuario){
-		$query = $this->insert('usuario', $usuario);
+		$query = $this->db->insert('usuario', $usuario);
 		return $query;
 	}
 
