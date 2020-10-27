@@ -24,10 +24,8 @@ class SalaProyeccion extends CI_Model
 	{	
 		
 		$this->db->select('id_sala, nombre, id_cine, id_pelicula, fecha_inicio_proyeccion, fecha_fin_proyeccion');
-	
 		$this->db->from('salaproyeccion');
-		echo "getFunction";
-		$query= $this->db->get()->result();
+	
 	
 		return $this->db->get()->result();
 	}
