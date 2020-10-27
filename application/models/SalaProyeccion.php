@@ -1,6 +1,6 @@
 <?php
 
-class Taquillas extends CI_Model
+class SalaProyeccion extends CI_Model
 {
 
 	public function __construct()
@@ -16,27 +16,30 @@ class Taquillas extends CI_Model
 	fecha_venta timestamp
 	*/
 	/**
-	 * Get all taquillas
+	 * Get all salas
 	 * @return mixed
 	 */
-	//Model to Taquillas
+	//Model to salas
 	public function get()
-	{
-		$this->select('ticket, id_sala, fecha_venta');
-		$this->from('taquilla');
-
-		return $this->get()->result();
+	{	
+		
+		$this->db->select('id_sala, nombre, id_cine, id_pelicula, fecha_inicio_proyeccion, fecha_fin_proyeccion');
+	
+		$this->db->from('salaproyeccion');
+		echo "getFunction";
+		$query= $this->db->get()->result();
+	
+		return $this->db->get()->result();
 	}
-
 
 	/**
 	 * Add a new ticket
-	 * @param $taquilla
+	 * @param $salas
 	 * @return bool
 	 */
-	public function add($taquilla)
+	public function add($salaproyeccion)
 	{
-		$query = $this->db->insert('taquilla', $taquilla);
+		$query = $this->db->insert('salaproyeccion', $salaproyeccion);
 		return $query;
 	}
 

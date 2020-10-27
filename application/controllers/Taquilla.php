@@ -6,6 +6,7 @@ class Taquilla extends CI_Controller{
 	{
 		parent::__construct();
 		$this->load->model('taquillas');
+		$this->load->model('salaproyeccion');
 	}
 
 	public function index(){
@@ -16,6 +17,7 @@ class Taquilla extends CI_Controller{
 	//Formulario para creacion
 	public function create(){
 		$data['title'] = 'Nuevo ticket';
+		$data['salas'] = $this->salaproyeccion->get();
 		$data['action'] = 'store';
 		$this->load->view('taquilla/create', $data);
 	}
@@ -24,12 +26,20 @@ class Taquilla extends CI_Controller{
 	public function store(){
 			if ($this->taquillas->add($this->input->post())){
 				echo "Insertado correctamente";
-				redirect('index');
+				redirect('localhost:81/index.php');
 			} else {
 				echo "Error al insertar";
 			}
 
 		redirect('create');
+	}
+
+	public function getSalas (){
+		
+		echo "<pre>";
+		var_dump($data['salas']);
+		die();
+		$this->load->view('taquilla/create', $data);
 	}
 
 }
