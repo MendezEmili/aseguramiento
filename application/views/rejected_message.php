@@ -89,20 +89,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<div id="container">
 	
 		<h1>Cines</h1>
-		<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Cines</a>
-			</div>
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">Tickets</a></li>
-				<li><a href="#">Usuarios</a></li>
-				<li><a href="#">Peliculas</a></li>
-				<li><a href="#">Salas</a></li>
-			</ul>
-		</div>
-	</nav>
+		<h1>Registrate para empezar</h1>
 	</div>
 
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
