@@ -26,12 +26,13 @@ class Taquilla extends CI_Controller{
 	public function store(){
 			if ($this->taquillas->add($this->input->post())){
 				echo "Insertado correctamente";
-				redirect('localhost:81/index.php');
+				header("Location: index.php"); 
+
 			} else {
 				echo "Error al insertar";
 			}
 
-		redirect('create');
+			header("Location: ../../index.php"); 
 	}
 
 	public function getSalas (){
