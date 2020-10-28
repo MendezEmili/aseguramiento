@@ -36,7 +36,7 @@ class Taquilla extends CI_Controller{
 	}
 
 	public function getSalas (){
-		
+	
 		echo "<pre>";
 		var_dump($data['salas']);
 		die();
