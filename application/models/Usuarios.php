@@ -71,6 +71,7 @@ class Usuarios extends CI_Model{
 	/**
 	 * Edit a bank by id
 	 * @param $bank
+	 * @return bool
 	 */
 	public function edit($bank, $id){
 		$this->db->set($bank);
@@ -81,5 +82,13 @@ class Usuarios extends CI_Model{
 		return false;
 	}
 
+	public function login($usuario, $password){
+		$array = array('usuario'=>$usuario, 'contrasenia'=>$password);
+		$this->db->select('usuario');
+		$this->db->from('usuario');
+		$this->db->where($array);
+
+		return $this->db->get()->result();
+	}
 
 }
