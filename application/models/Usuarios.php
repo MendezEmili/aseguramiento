@@ -82,13 +82,16 @@ class Usuarios extends CI_Model{
 		return false;
 	}
 
-	public function login($usuario, $password){
-		$array = array('usuario'=>$usuario, 'contrasenia'=>$password);
+	public function login($usuario, $contrasenia){
+		$array = array('usuario'=>$usuario, 'contrasenia'=>$contrasenia);
 		$this->db->select('usuario');
 		$this->db->from('usuario');
 		$this->db->where($array);
-
-		return $this->db->get()->result();
+		$resultado = $this->db->get()->result();
+		if($resultado){
+			return true;
+		}
+		return false;
 	}
 
 }

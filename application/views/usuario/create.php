@@ -1,3 +1,5 @@
+<?php $this->load->view('assets/header');?>
+
 <div id="wrapper">
 	<div class="content">
 		<div class="panel_s">

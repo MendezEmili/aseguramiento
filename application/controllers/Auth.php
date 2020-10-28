@@ -9,23 +9,22 @@ class auth extends CI_Controller {
 	}
 
 	public function index(){
-		$this->load->view('auth/login');
+		$data['action'] = 'auth/inicio';
+		$this->load->view('auth/login', $data);
 		$this->load->model('Usuarios');
 	}
 
 	public function inicio(){
-		$var = $this->input->post();
-		//acá no se si fue por el sueño, pero no le entendi como llenas estas propiedades, porque si haces un dump, si sale bien el json
-		
+		$usuario = $this->input->post('usuario');
+		$contrasenia = $this->input->post('contrasenia');
 		$sesion = $this->Usuarios->login($usuario, $contrasenia);
-		echo "<pre>";
-		var_dump($var);
-		die();
-		//$this->usuarios->login($var->usuario, $var->contrasenia);
-	
-		echo "Login";
-		echo $sesion;
+		if($sesion){
+			echo " Si hay sesion";
+		} else { ?>
+			<script>
+				alert("Usuario o contraseña incorrecto");
+			</script>
+		<?php }
 	}
-
 
 }
