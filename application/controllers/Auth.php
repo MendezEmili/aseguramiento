@@ -20,18 +20,22 @@ class auth extends CI_Controller {
 		$sesion = $this->Usuarios->login($usuario, $contrasenia);
 		if($sesion){
 			session_start();
-			echo " Si hay sesion";
 			$_SESSION["token"]=(string)"true";
 			$_SESSION["user"]=(string)$usuario;
-			echo $_SESSION["token"];
-			echo $_SESSION["user"]; 
-			header("Location: ../../index.php"); 
+			$this->load->view('welcome_message');
 		} else { ?>
 			<script>
 				alert("Usuario o contraseña incorrecto");
 			</script>
-			header("Location: ../../indexv.php"); 
-		<?php }
+			<?php $this->load->view('rejected_message');
+		 }
+	}
+
+	public function logout(){
+		session_start();
+		session_destroy();
+		header("Location: ../../index.php");
+
 	}
 
 }

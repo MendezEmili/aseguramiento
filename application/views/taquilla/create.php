@@ -1,20 +1,36 @@
 <?php
 session_start();
 if (isset($_SESSION['token']) && $_SESSION['token'] == "true") {
-	echo "Bienvenido! " . $_SESSION['user'];
+	$this->load->view('assets/header'); ?>
+		<div class="container-fluid bg-info">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<h1>Bienvenido <?php echo $_SESSION['user'];?></h1>
+					</div>
+					<div class="col">
+						<a href="../auth/logout" class="btn btn-danger">Cerrar Sesión</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php
 }
-else {
-	echo "Esta pagina es solo para usuarios registrados.<br>";
+else { ?>
+	<script>
+		alert('Esta pagina es solo para usuarios registrados.');
+	</script>
+	<?php
+	$this->load->view('rejected_message');
 	exit;
 	}
-	
 ?>
 
-<?php $this->load->view('assets/header'); ?>
 <body>
 	<div class="container">
 
-		<form action="<?php echo $action; ?>" method="post">
+
+		<form action="<?php echo $action ; ?>" method="post">
 			<h2 class="form-signin-heading"><?php echo $title ?></h2>
 
 

@@ -96,7 +96,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</div>
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">Tickets</a></li>
+				<li><a href="../taquilla/create">Tickets</a></li>
 				<li><a href="#">Usuarios</a></li>
 				<li><a href="#">Peliculas</a></li>
 				<li><a href="#">Salas</a></li>

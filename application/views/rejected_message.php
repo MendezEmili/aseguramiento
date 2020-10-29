@@ -1,95 +1,21 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+$this->load->view('assets/header');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="utf-8">
-	<title>Cines</title>
-
-	<style type="text/css">
-		::selection {
-			background-color: #E13300;
-			color: white;
-		}
-
-		::-moz-selection {
-			background-color: #E13300;
-			color: white;
-		}
-
-		body {
-			background-color: #fff;
-			margin: 40px;
-			font: 13px/20px normal Helvetica, Arial, sans-serif;
-			color: #4F5155;
-		}
-
-		a {
-			color: #003399;
-			background-color: transparent;
-			font-weight: normal;
-		}
-
-		h1 {
-			color: #444;
-			background-color: transparent;
-			border-bottom: 1px solid #D0D0D0;
-			font-size: 19px;
-			font-weight: normal;
-			margin: 0 0 14px 0;
-			padding: 14px 15px 10px 15px;
-		}
-
-		code {
-			font-family: Consolas, Monaco, Courier New, Courier, monospace;
-			font-size: 12px;
-			background-color: #f9f9f9;
-			border: 1px solid #D0D0D0;
-			color: #002166;
-			display: block;
-			margin: 14px 0 14px 0;
-			padding: 12px 10px 12px 10px;
-		}
-
-		#body {
-			margin: 0 15px 0 15px;
-		}
-
-		p.footer {
-			text-align: right;
-			font-size: 11px;
-			border-top: 1px solid #D0D0D0;
-			line-height: 32px;
-			padding: 0 10px 0 10px;
-			margin: 20px 0 0 0;
-		}
-
-		#container {
-			margin: 10px;
-			border: 1px solid #D0D0D0;
-			box-shadow: 0 0 8px #D0D0D0;
-		}
-	</style>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-
-	<link rel="stylesheet" href="styles.css">
-	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-</head>
-
 <body>
 	
-	<div id="container">
-	
-		<h1>Cines</h1>
-		<h1>Registrate para empezar</h1>
+	<div id="container" class="container">
+		<div class="row">
+			<div class="col-8">
+				<h1>Cines</h1>
+			</div>
+			<div class="col-4">
+				<a class="btn btn-success" href="index.php/auth">Registrate para empezar</a>
+			</div>
+		</div>
 	</div>
 
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -129,66 +55,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <div class="container-fluid text-center text-md-left">
 
 <!-- Grid row -->
-<div class="row">
-
-  <!-- Grid column -->
-  <div class="col-md-6 mt-md-0 mt-3">
+<div class="container">
 
 	<!-- Content -->
-	<h5 class="text-uppercase">Footer Content</h5>
-	<p>Here you can use rows and columns to organize your footer content.</p>
+	<h5 class="text-uppercase">Ingeniería en Sistemas</h5>
+	<p>Aseguramiento de la calidad de software</p>
 
-  </div>
   <!-- Grid column -->
 
   <hr class="clearfix w-100 d-md-none pb-3">
 
-  <!-- Grid column -->
-  <div class="col-md-3 mb-md-0 mb-3">
-
-	<!-- Links -->
-	<h5 class="text-uppercase">Links</h5>
-
-	<ul class="list-unstyled">
-	  <li>
-		<a href="#!">Link 1</a>
-	  </li>
-	  <li>
-		<a href="#!">Link 2</a>
-	  </li>
-	  <li>
-		<a href="#!">Link 3</a>
-	  </li>
-	  <li>
-		<a href="#!">Link 4</a>
-	  </li>
-	</ul>
-
-  </div>
-  <!-- Grid column -->
-
-  <!-- Grid column -->
-  <div class="col-md-3 mb-md-0 mb-3">
-
-	<!-- Links -->
-	<h5 class="text-uppercase">Links</h5>
-
-	<ul class="list-unstyled">
-	  <li>
-		<a href="#!">Link 1</a>
-	  </li>
-	  <li>
-		<a href="#!">Link 2</a>
-	  </li>
-	  <li>
-		<a href="#!">Link 3</a>
-	  </li>
-	  <li>
-		<a href="#!">Link 4</a>
-	  </li>
-	</ul>
-
-  </div>
   <!-- Grid column -->
 
 </div>

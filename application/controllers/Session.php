@@ -1,11 +1,13 @@
 <?php
 session_start();
-if (isset($_SESSION['token']) && $_SESSION['token'] == true) {
+if (isset($_SESSION['token']) && $_SESSION['token'] == "true") {
 	echo "Bienvenido! " . $_SESSION['user'];
 }
-else {
-	echo "Esta pagina es solo para usuarios registrados.<br>";
+else { ?>
+	<script>
+		alert('Esta pagina es solo para usuarios registrados.');
+	</script>
+	<?php
+	$this->load->view('rejected_message');
 	exit;
-	}
-	
-?>
+}

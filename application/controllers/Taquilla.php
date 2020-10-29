@@ -25,11 +25,19 @@ class Taquilla extends CI_Controller{
 	//Insert DB
 	public function store(){
 			if ($this->taquillas->add($this->input->post())){
-				echo "Insertado correctamente";
+				?>
+				<script>
+					alert("Insertado correctamente");
+				</script>
+				<?php
 				header("Location: index.php"); 
 
 			} else {
-				echo "Error al insertar";
+				?>
+				<script>
+					alert("Error al insertar");
+				</script>
+				<?php
 			}
 
 			header("Location: ../../index.php"); 
