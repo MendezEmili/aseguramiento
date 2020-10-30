@@ -36,8 +36,11 @@ class Taquillas extends CI_Model
 	 */
 	public function add($taquilla)
 	{
-		$query = $this->db->insert('taquilla', $taquilla);
-		return $query;
+		if($this->db->insert('taquilla', $taquilla)){
+			return  $this->db->insert_id();
+		}
+
+		return false;
 	}
 
 	/**

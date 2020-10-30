@@ -34,14 +34,12 @@ else { ?>
 			<h2 class="form-signin-heading"><?php echo $title ?></h2>
 
 
-			<label>Ticket</label>
-			<input type="text" id="ticket" name="ticket" placeholder="Ticket" class="form-control">
-			<label>Fecha Venta</label>
-			<input class="form-control" type="date" id="fecha_venta" name="fecha_venta" id="example-date-input">
+				<label>Fecha Venta</label>
+			<input class="form-control" type="date" id="fecha_venta" name="fecha_venta">
 
 
 			<label>Sala</label>
-			<select class="form-control" id="sel1">
+			<select class="form-control" name="id_sala" id="id_sala">
 				<?php foreach ($salas as $sala) { ?>
 					<option value=<?php echo $sala->id_sala; ?>><?php echo $sala->nombre; ?></option>
 				<?php } ?>

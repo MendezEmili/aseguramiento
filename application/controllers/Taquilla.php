@@ -28,44 +28,19 @@ class Taquilla extends CI_Controller
 	//Insert DB
 	public function store()
 	{
-		$this->load->helper('form');
-		$this->load->library('form_validation');
-		$this->form_validation->set_rules('ticket', 'Ticket', 'trim|numeric|required|min_length[3]|max_length[9]');
-
-		if ($this->form_validation->run() === false) {
-
-			// validation not ok, send validation errors to the view
+		$fecha= $this->input->post();
+		if (isset($fecha)) {
+			$id = $this->taquillas->add($this->input->post());
+			if ($id != false) {
+				
 ?>
-
-			<script type="text/javascript">
-				var txt;
-				var r = confirm("Verificar la longitud del Digito en numero de ticket");
-				if (r == true) {
-					txt = "You pressed OK!";
-					window.location.href = "../taquilla/create";
-				} else {
-					txt = "You pressed Cancel!";
-				}
-			</script>
-			<?php
-
-
-
-			//header("Location: ../taquilla/create");
-
-		} else {
-
-			echo "funcionaform";
-
-
-			if ($this->taquillas->add($this->input->post())) {
-			?>
 				<script>
-					alert("Insertado correctamente");
+					alert("Insertado correctamente. Su ticket es : <?php echo $id ?> ");
 				</script>
 			<?php
-				header("Location: index.php");
-				header("Location: ../../index.php");
+				//header("Location: index.php");
+				//header("Location: ../../index.php");
+				$this->load->view('welcome_message');
 			} else {
 			?>
 				<script>
@@ -73,15 +48,11 @@ class Taquilla extends CI_Controller
 				</script>
 <?php
 			}
-		};
+		}
 	}
 
-	public function getSalas()
-	{
 
-		echo "<pre>";
-		var_dump($data['salas']);
-		die();
-		$this->load->view('taquilla/create', $data);
+	public function uniqueTicket()
+	{
 	}
 }
