@@ -26,8 +26,10 @@ class auth extends CI_Controller {
 		} else { ?>
 			<script>
 				alert("Usuario o contraseña incorrecto");
+				
 			</script>
 			<?php $this->load->view('rejected_message');
+			header("Location: /index.php");
 		 }
 	}
 
