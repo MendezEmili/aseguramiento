@@ -36,11 +36,11 @@ class Taquilla extends CI_Controller
 ?>
 				<script>
 					alert("Insertado correctamente. Su ticket es : <?php echo $id ?> ");
+					window.location.replace("/index.php");
 				</script>
 			<?php
-				//header("Location: index.php");
-				//header("Location: ../../index.php");
-				$this->load->view('welcome_message');
+			
+				
 			} else {
 			?>
 				<script>
