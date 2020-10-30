@@ -13,7 +13,7 @@ $this->load->view('assets/header');
 				<h1>Cines</h1>
 			</div>
 			<div class="col-4">
-				<a class="btn btn-success" href="index.php/auth">Registrate para empezar</a>
+				<a class="btn btn-success" href="index.php/auth">Iniciar Sesión</a>
 			</div>
 		</div>
 	</div>
