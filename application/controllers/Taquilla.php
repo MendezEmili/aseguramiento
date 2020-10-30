@@ -36,15 +36,27 @@ class Taquilla extends CI_Controller
 
 			// validation not ok, send validation errors to the view
 ?>
-			<script>
-				alert("Numero de solicitud invalido");
+
+			<script type="text/javascript">
+				var txt;
+				var r = confirm("Verificar la longitud del Digito en numero de ticket");
+				if (r == true) {
+					txt = "You pressed OK!";
+					window.location.href = "../taquilla/create";
+				} else {
+					txt = "You pressed Cancel!";
+				}
 			</script>
 			<?php
-			die();
+
+
+
+			//header("Location: ../taquilla/create");
+
 		} else {
 
 			echo "funcionaform";
-			
+
 
 			if ($this->taquillas->add($this->input->post())) {
 			?>
@@ -61,9 +73,7 @@ class Taquilla extends CI_Controller
 				</script>
 <?php
 			}
-
-			
-		}
+		};
 	}
 
 	public function getSalas()
